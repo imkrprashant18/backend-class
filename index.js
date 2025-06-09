@@ -2,9 +2,13 @@
 // const express = require('express')
 import express from  'express'
 import messageRoutes from "./routes/user.route.js"
+import connectDB from './db/index.js'
+import dotenv from "dotenv"
+dotenv.config()
 const app = express()
 app.use(express.json())
-const PORT = 8000
+const PORT = process.env.PORT
+connectDB()
 // routes, conttrollers
 // app.get("/test", (req, res) => {
 //         res.send("Hello World");
